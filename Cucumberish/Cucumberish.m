@@ -39,6 +39,7 @@
 #import "XCTestCase+RecordFailure.h"
 
 #import "CCIJSONDumper.h"
+#import "Cucumberish/Cucumberish-Swift.h"
 
 
 @interface CCIExeption : NSException @end
@@ -429,6 +430,9 @@ OBJC_EXTERN NSString * stepDefinitionLineForStep(CCIStep * step);
 
 + (Class)featureTestCaseClass:(CCIFeature *)feature
 {
+    TagManager *thing = [[TagManager alloc] init];
+    [thing helloWorld];
+    
     //Prefix it with CCI to avoit any name collision
     //Prefix it with CCI to avoit any name collision
     NSString * className = [[[Cucumberish instance] featureNamesPrefix] stringByAppendingString:feature.name];
