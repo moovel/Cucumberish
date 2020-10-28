@@ -116,6 +116,7 @@
 		607EEA591E50EE1000F2E8B6 /* NSObject+Dictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E80F721E16BA290042D98D /* NSObject+Dictionary.h */; };
 		607EEA5A1E50EE1000F2E8B6 /* NSString+Formatter.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E80F741E16BA290042D98D /* NSString+Formatter.h */; };
 		607EEA5B1E50EF4F00F2E8B6 /* gherkin-languages.json in Resources */ = {isa = PBXBuildFile; fileRef = C5E80F341E16BA280042D98D /* gherkin-languages.json */; };
+		9BEB2C0E2549DB7A00A1657A /* TagManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB2C0D2549DB7A00A1657A /* TagManager.swift */; };
 		B3D80A9020497AA800ACAE33 /* Cucumberish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607EE9EA1E50ED5800F2E8B6 /* Cucumberish.framework */; };
 		B3D80A9120497AAC00ACAE33 /* Cucumberish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607EE9EA1E50ED5800F2E8B6 /* Cucumberish.framework */; };
 		B3D80AF52049AC2A00ACAE33 /* XCTestCase+RecordFailure.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D80AF32049AC2A00ACAE33 /* XCTestCase+RecordFailure.h */; };
@@ -142,6 +143,7 @@
 		3E38B0F61DDDE0D600C1CF5A /* CucumberFeatureSteps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CucumberFeatureSteps.m; sourceTree = "<group>"; };
 		3E38B10E1DDDE15100C1CF5A /* Features */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Features; sourceTree = "<group>"; };
 		607EE9EA1E50ED5800F2E8B6 /* Cucumberish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cucumberish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BEB2C0D2549DB7A00A1657A /* TagManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagManager.swift; sourceTree = "<group>"; };
 		B3D80AF32049AC2A00ACAE33 /* XCTestCase+RecordFailure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+RecordFailure.h"; sourceTree = "<group>"; };
 		B3D80AF42049AC2A00ACAE33 /* XCTestCase+RecordFailure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+RecordFailure.m"; sourceTree = "<group>"; };
 		C57B79D81E15847C001B758D /* CucumberishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CucumberishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -512,6 +514,7 @@
 				C5E80F751E16BA290042D98D /* NSString+Formatter.m */,
 				B3D80AF32049AC2A00ACAE33 /* XCTestCase+RecordFailure.h */,
 				B3D80AF42049AC2A00ACAE33 /* XCTestCase+RecordFailure.m */,
+				9BEB2C0D2549DB7A00A1657A /* TagManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 					};
 					607EE9E91E50ED5800F2E8B6 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 1210;
 						ProvisioningStyle = Automatic;
 					};
 					C57B79D71E15847C001B758D = {
@@ -668,6 +672,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 3E0B34141DDB9C0E00E1A338;
@@ -736,6 +741,7 @@
 				607EE9F41E50EDDD00F2E8B6 /* CCIArgument.m in Sources */,
 				607EE9F51E50EDDD00F2E8B6 /* CCIAroundHock.m in Sources */,
 				607EE9F61E50EDDD00F2E8B6 /* CCIBackground.m in Sources */,
+				9BEB2C0E2549DB7A00A1657A /* TagManager.swift in Sources */,
 				607EE9F71E50EDDD00F2E8B6 /* CCIExample.m in Sources */,
 				607EE9F81E50EDDD00F2E8B6 /* CCIFeature.m in Sources */,
 				607EE9F91E50EDDD00F2E8B6 /* CCIHock.m in Sources */,
@@ -910,6 +916,7 @@
 		3E38B0F21DDDE0A400C1CF5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEFINES_MODULE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"SRC_ROOT=@\\\"$(SRCROOT)\\\"",
@@ -924,6 +931,7 @@
 		3E38B0F31DDDE0A400C1CF5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEFINES_MODULE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "SRC_ROOT=@\\\"$(SRCROOT)\\\"";
 				INFOPLIST_FILE = CucumberishFeatureDefinition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -935,6 +943,7 @@
 		607EE9EF1E50ED5800F2E8B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -944,6 +953,8 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -955,6 +966,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ahmed.ali.Cucumberish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -963,6 +976,7 @@
 		607EE9F01E50ED5800F2E8B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -972,6 +986,8 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "SRC_ROOT=@\\\"$(SRCROOT)\\\"";
 				INFOPLIST_FILE = Cucumberish/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -979,6 +995,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ahmed.ali.Cucumberish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
