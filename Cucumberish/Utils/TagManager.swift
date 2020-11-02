@@ -10,6 +10,6 @@ import Foundation
 
 @objc public class TagManager: NSObject {
     @objc public func helloWorld() {
-        print("hello world!")
+        print("xkcd hello world!")
     }
 }
